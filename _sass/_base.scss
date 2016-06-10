@@ -1,0 +1,326 @@
+/* GLOBALS */
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	min-width: 320px;
+	font-family: $serif-font;
+	font-size: 100%;
+	font-weight: normal;
+	background: #FFFFFF;
+	color: $text-color;
+	margin: 0;
+	padding: 0;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 0px) and (max-width: 1095px) {
+	header#masthead #site-title {
+		width: 274px;
+		position: absolute;
+	}
+}
+
+@media only screen and (min-width: 905px) {
+	.project {
+		height: 48em;
+	}
+}
+
+@media only screen and (min-width: 529px) {
+	section#main {
+		padding: 3.5em 2em 2em 3.5em;
+	}
+	#main > div {
+		margin-left: 3.5em;
+	}
+}
+
+@media only screen and (min-width: 0) and (max-width: 528px) {
+	#left {
+		width: 256px;
+	}
+	#left .number {
+		display: none;
+		width: 100%;
+	}
+	#left .number:nth-child(2) {
+		display: block; // display only the first number
+	}
+	section#main {
+		padding: 2em 2em 2em 2em;
+	}
+	#main > div {
+		margin-left: 0;
+	}
+}
+
+// IE <9 Image Gallery Hack
+@media only screen and (min-width: 320px) {
+	.gallery {
+		position: relative;
+		height: 300px;
+		//width: 340px;
+		overflow: hidden;
+	}
+	.target {
+		position: absolute;
+		//top: 60px;
+		//left: -320px;
+		left: -10000px;
+		//height: 220px;
+		//width: 300px;
+	}
+	.target:target {
+		//left: 20px;
+		left: 0;
+	}
+}
+
+/* HEADER */
+
+header#masthead {
+	width: 100%;
+	float: left;
+}
+
+#site-title {
+	width: 25%;
+	min-width: 274px;
+	height: 8.8125em;
+	float: left;
+	background-color: #ffffff;
+	border-bottom: 0.0625em solid $line-color;
+}
+
+#site-title h1 {
+	float: right;
+	margin: 3em 3em 0 0;
+}
+
+#site-title h1 a {
+	padding: 1em;
+	display: block;
+}
+
+#banner {
+	width: 75%;
+	overflow: hidden;
+	height: 8.8125em;
+	float: right;
+	clear: right;
+	background-image: url("../assets/banner.jpg");
+	background-repeat: repeat-x;
+}
+
+/* NAVIGATION */
+
+nav#main-navigation {
+	width: 100%;
+	display: block;
+	float: left;
+}
+
+#main-navigation ul {
+	margin: 0;
+	padding: 0 1.625em 3.5em 1.625em ;
+	border-bottom: 1px dotted $line-color;
+	list-style-type: none;
+}
+
+#main-navigation ul li {
+	display: inline-block;
+	margin: 0.75em 0.75em 0 0;
+}
+
+#main-navigation ul li a {
+	display: block;
+	padding: 1em;
+}
+
+/* MAIN */
+
+section#main {
+	width: 100%;
+	float:left;
+	margin: 0;
+	position: relative;
+}
+
+aside#left {
+	max-width: 100%;
+	position: absolute;
+	top: -0.5em;
+	left: 2em;
+}
+
+#left .number {
+	position: relative;
+	top: -0.5em;
+	margin-right: 14em;
+	margin-bottom: 14em;
+	overflow: hidden;
+}
+
+#left p {
+	position: absolute;
+}
+
+.main-header {
+	display: none;
+}
+
+.single-col, .project {
+	max-width: 22em;
+	float: left;
+}
+
+.single-col {
+	clear: right;
+}
+
+.project {
+	margin-bottom: 3.5em;
+}
+
+.project figure.featured-image {
+	height: 10em;
+	margin: 0 0 3.5em 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.featured-image img {
+	max-width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+// Project Page
+
+.project-detail {
+	display: none;
+}
+
+html.projects .project-detail {
+	display: block;
+}
+
+html.projects .project-text {
+	max-width: 22em;
+}
+
+.gallery ul {
+	list-style-type: none;
+	padding: 1em 0;
+}
+
+.gallery ul li {
+	display: inline-block;
+}
+
+.gallery figure {
+	margin: 0;
+}
+
+/* TYPOGRAPHY */
+
+// Site Title
+
+#site-title h1 {
+	//font-size: 0.9em;
+	font-family: $serif-font-bold;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+#site-title h1 a {
+	text-decoration: none;
+	color: $text-color;
+	font-weight: bold;
+	text-transform: UPPERCASE;
+	letter-spacing: 0.35em;
+}
+
+// Main Naviagtion
+
+#main-navigation ul li a {
+	text-decoration: none;
+	color: $text-color;
+	font-size: 0.6em;
+	line-height: 1.5em;
+	letter-spacing: 0.5em;
+	text-transform: UPPERCASE;
+	border-bottom: 1px solid transparent;
+}
+
+#main-navigation ul li a:hover {
+	border-bottom: 1px solid $line-color;
+	color: $highlight-color;
+}
+
+#main-navigation ul li.active a,
+#main-navigation ul li a:active {
+	border-bottom: 1px dotted $line-color;
+	color: $selected-color;
+}
+
+// Tagline
+
+aside#left p {
+	font-size: 0.6em;
+	font-family: $sans-serif-font;
+	color: $text-color;
+	text-transform: UPPERCASE;
+	font-weight: 100;
+	letter-spacing: 0.1em;
+}
+
+// Numbers
+
+#left .number {
+	font-size: 0.5em;
+	font-family: "";
+	font-weight: 100;
+	color: $highlight-color;
+	letter-spacing: 0.1em;
+}
+
+// Main
+
+h1 {
+	font-family: $serif-font-bold;
+}
+
+/*
+h2 a {
+	font-family: $serif-font-bold;
+	color: $text-color;
+	text-decoration: none;
+}
+*/
+.project a.project-title-link {
+	font-family: $serif-font-bold;
+	color: $text-color;
+	text-decoration: none;
+}
+
+p {
+	font-size: 0.8em;
+	line-height: 1.4em;
+	text-align: justify;
+}
+
+.project a.project-expand-link {
+	color: $selected-color;
+	text-decoration: none;
+	font-weight: 100;
+}
+
+
